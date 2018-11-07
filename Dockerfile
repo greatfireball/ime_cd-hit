@@ -32,3 +32,6 @@ RUN wget -O - wget https://github.com/weizhongli/cdhit/releases/download/V4.6.8/
     make
 
 ENV PATH=/opt/cd-hit/:/opt/cd-hit/cd-hit-auxtools/:${PATH}
+
+VOLUME /data
+WORKDIR /data
