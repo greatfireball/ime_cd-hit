@@ -20,3 +20,13 @@ RUN apt update && \
 	build-essential && \
     apt autoclean && \
     rm -rf /var/lib/apt/lists/* /var/log/dpkg.log
+
+WORKDIR /opt
+
+RUN wget -O - wget https://github.com/weizhongli/cdhit/releases/download/V4.6.8/cd-hit-v4.6.8-2017-1208-source.tar.gz | \
+    tar xzf - && \
+    ln -s cd-hit-v4.6.8-2017-1208 cd-hit && \
+    cd cd-hit && \
+    make && \
+    cd cd-hit-auxtools/ && \
+    make
