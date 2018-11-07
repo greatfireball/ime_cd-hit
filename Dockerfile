@@ -13,3 +13,10 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.vcs-ref=${VCS_REF} \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/greatfireball/ime_cd-hit.git"
+
+RUN apt update && \
+    apt install --yes \
+	wget \
+	build-essential && \
+    apt autoclean && \
+    rm -rf /var/lib/apt/lists/* /var/log/dpkg.log
